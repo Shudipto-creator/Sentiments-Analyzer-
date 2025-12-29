@@ -33,13 +33,13 @@ Analyze emotions in text using **zero-shot classification** with `facebook/bart-
 flowchart LR
   U[User] -->|Text input| G[Gradio UI]
   G --> A[analyze_emotions]
-  A -->|candidate_labels: 27 emotions| P[Transformers pipeline<br/>zero-shot-classification]
+  A -->|candidate_labels: 27 emotions| P[Transformers pipeline (zero-shot-classification)]
   P --> M[facebook/bart-large-mnli]
   M --> R[Scores per emotion]
-  R --> N[Normalize scores<br/>(sum to 1)]
-  N --> S[Summary<br/>Dominant emotion]
+  R --> N[Normalize scores (sum to 1)]
+  N --> S[Summary (dominant emotion)]
   N --> T[Breakdown table]
-  N --> C[Plotly chart<br/>Radar + Bar]
+  N --> C[Plotly chart (radar + bar)]
   S --> G
   T --> G
   C --> G
